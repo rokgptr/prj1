@@ -3,7 +3,7 @@
 
 
 // CAWPrintPreview ∫‰¿‘¥œ¥Ÿ.
-
+// This is the test
 class CAWPrintPreview : public CScrollView
 {
 	DECLARE_DYNCREATE(CAWPrintPreview)
