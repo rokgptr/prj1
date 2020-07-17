@@ -1,0 +1,52 @@
+// AWStitch.idl : ActiveX 컨트롤 프로젝트의 형식 라이브러리 소스입니다.
+
+// 이 파일은 MIDL 컴파일러 도구에 의해 처리되어
+// AWStitch.ocx의 리소스가 되는
+// 형식 라이브러리(AWStitch.tlb)가 생성됩니다.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(613CF9C0-5A9E-4CA2-9466-E8696A5BF1BE), version(1.0),
+  helpfile("AWStitch.hlp"),
+  helpstring("AWStitch ActiveX 컨트롤 모듈"),
+  control ]
+library AWStitchLib
+{
+	importlib(STDOLE_TLB);
+
+	// CAWStitchCtrl의 기본 디스패치 인터페이스입니다.
+
+	[ uuid(367AED58-E27E-4577-BDF1-397AAEFC4258),
+	  helpstring("AWStitch Control의 디스패치 인터페이스")]
+	dispinterface _DAWStitch
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	// CAWStitchCtrl의 이벤트 디스패치 인터페이스입니다.
+
+	[ uuid(56FFF953-61F1-425B-8194-0D1F1E0CDA7A),
+	  helpstring("AWStitch Control의 이벤트 인터페이스") ]
+	dispinterface _DAWStitchEvents
+	{
+		properties:
+			// 이벤트 인터페이스에 속성이 없습니다.
+
+		methods:
+	};
+
+	// CAWStitchCtrl의 클래스 정보입니다.
+
+	[ uuid(244E50DB-B294-410F-A43C-572F702B49CA),
+	  helpstring("AWStitch Control"), control ]
+	coclass AWStitch
+	{
+		[default] dispinterface _DAWStitch;
+		[default, source] dispinterface _DAWStitchEvents;
+	};
+
+};
